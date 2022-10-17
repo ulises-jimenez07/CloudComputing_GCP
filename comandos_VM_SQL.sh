@@ -89,3 +89,34 @@ CREATE TABLE book (
   bookname STRING(200)
 ) PRIMARY KEY (aid,bid),
 INTERLEAVE IN PARENT author ON DELETE CASCADE;
+
+
+#install redis
+redis-cli
+sudo apt-get install redis-tools
+ping
+ping "hello"
+set foo bar
+get foo
+
+#BIG TABLE
+echo $DEVSHELL_PROJECT_ID
+
+
+cbt createtable emp
+nano .cbtrc
+project = testup-gcp
+instance = mi-primer-tablota
+
+#consultar tablota
+cbt ls emp
+cbt createfamily emp professional_data_cf
+
+
+cbt set emp J1 personal_data_cf:name=john
+cbt set emp J1 personal_data_cf:age=28
+
+key J1
+cbt read emp
+
+cbt set emp A1 professional_data_cf:education=master
